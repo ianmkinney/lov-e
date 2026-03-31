@@ -3,28 +3,55 @@
     "name": "lov-e",
     "slug": "lov-e",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "default",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "newArchEnabled": true,
+    "scheme": "love",
+    "userInterfaceStyle": "dark",
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#0d1f17"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "lov-e records the court and captures frames for AI line and shot analysis.",
+        "NSMicrophoneUsageDescription": "lov-e may record audio with match video when enabled."
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#0d1f17"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO"
+      ]
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow lov-e to use the camera for tennis recording and calibration.",
+          "microphonePermission": "Allow lov-e to record audio with match video.",
+          "recordAudioAndroid": true
+        }
+      ],
+      "expo-asset",
+      "expo-video",
+      "expo-font",
+      "expo-screen-orientation"
+    ],
+    "experiments": {
+      "typedRoutes": true
     }
   }
 }
