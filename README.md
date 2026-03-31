@@ -33,7 +33,7 @@
 ## Quick start
 
 ```bash
-git clone https://github.com/ianmkinney/lov-e.git
+git clone https://github.com/<your-username>/lov-e.git
 cd lov-e
 npm install
 ```
