@@ -36,10 +36,13 @@ export default function RootLayout() {
           options={{ headerShown: false, title: 'Home' }}
         />
         <Stack.Screen name="match/setup" options={{ title: 'Match setup' }} />
-        <Stack.Screen name="match/calibrate" options={{ title: 'Court calibration' }} />
+        <Stack.Screen
+          name="match/calibrate"
+          options={{ title: 'Court calibration', orientation: 'landscape' }}
+        />
         <Stack.Screen
           name="match/live"
-          options={{ title: 'Live match', headerBackVisible: false }}
+          options={{ title: 'Live match', headerBackVisible: false, orientation: 'landscape' }}
         />
         <Stack.Screen name="match/[id]" options={{ title: 'Match review' }} />
         <Stack.Screen name="link/create" options={{ title: 'Create room' }} />

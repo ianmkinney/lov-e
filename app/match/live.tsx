@@ -20,11 +20,9 @@ import { LinkStatus } from '@/components/LinkStatus';
 import { useFrameAnalysis } from '@/hooks/useFrameAnalysis';
 import { useMatchRoom } from '@/hooks/useMatchRoom';
 import { useAnnouncer } from '@/hooks/useAnnouncer';
-import { useLandscapeLockFocus } from '@/hooks/useLandscapeLockFocus';
 import { appendHistory } from '@/lib/historyStorage';
 
 export default function LiveMatchScreen() {
-  useLandscapeLockFocus();
   const session = useMatchStore((s) => s.session);
   const matchState = useMatchStore((s) => s.matchState);
   const lastAnalysis = useMatchStore((s) => s.lastAnalysis);

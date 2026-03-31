@@ -6,12 +6,10 @@ import type { CornerPoint } from '@/types';
 import { theme } from '@/constants/theme';
 import { useMatchStore } from '@/stores/matchStore';
 import { CourtOverlay } from '@/components/CourtOverlay';
-import { useLandscapeLockFocus } from '@/hooks/useLandscapeLockFocus';
 
 const LABELS = ['Top-left', 'Top-right', 'Bottom-right', 'Bottom-left'];
 
 export default function CalibrateScreen() {
-  useLandscapeLockFocus();
   const [permission, requestPermission] = useCameraPermissions();
   const [corners, setCorners] = useState<CornerPoint[]>([]);
   const [layout, setLayout] = useState({ width: 0, height: 0 });
